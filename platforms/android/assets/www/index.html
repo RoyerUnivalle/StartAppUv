@@ -60,16 +60,13 @@ function checkConnection() {
     alert('Connection type: ' + states[networkState]);
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-console.log(navigator.contacts);
-var contactos = navigator.contacts;
-
-for (var i=0;i<=contactos.size;i++){
-		alert(contactos[i]);
-}
-//alert(navigator.contacts);
-}
+	function mostrarContactos(){
+		var contactos = navigator.contacts;
+		alert(contactos);
+		for (var i=0;i<=contactos.size;i++){
+				alert(i+": "+contactos[i].displayName);
+		}
+	}
 
 function setOptions(srcType) {
     var options = {
@@ -124,6 +121,7 @@ function displayImage(imgUri) {
         </div>
 		<button onclick="javascript:checkConnection();">Conexion</button>
 		<button onclick="javascript:openCamera();">Foto</button>
+		<button onclick="javascript:mostrarContactos();">Contactos</button>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
