@@ -60,6 +60,17 @@ function checkConnection() {
     alert('Connection type: ' + states[networkState]);
 }
 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+console.log(navigator.contacts);
+var contactos = navigator.contacts;
+
+for (var i=0;i<=contactos.size;i++){
+		alert(contactos[i]);
+}
+//alert(navigator.contacts);
+}
+
 function setOptions(srcType) {
     var options = {
         // Some common settings are 20, 50, and 100
